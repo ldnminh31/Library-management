@@ -1,5 +1,9 @@
 <?php
-include_once('./database/connect.php')
+include_once('./database/connect.php');
+include_once('./utils/utils.php');
+if (isset($_SESSION['username'])){
+    go("./admin.php");
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
