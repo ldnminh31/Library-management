@@ -13,6 +13,7 @@ include_once('./database/connect.php')
 </head>
 
 <body>
+
     <!-- Form đăng nhập -->
     <section class="vh-100">
         <div class="container-fluid">
@@ -36,7 +37,7 @@ include_once('./database/connect.php')
                             </div>
 
                             <div class="pt-1 mb-4">
-                                <button type="submit" class="btn btn-info btn-lg btn-block" type="button">Đăng nhập</button>
+                                <button type="submit" class="btn btn-info btn-lg btn-block" name="dangnnhap" type="button">Đăng nhập</button>
                             </div>
 
                             <p class="small mb-5 pb-lg-2"><a class="text-muted" href="#!">Quên mật khẩu?</a></p>
