@@ -1,4 +1,10 @@
-<?php session_start(); ?>
+<?php 
+session_start(); 
+if (!isset($_SESSION['username'])){
+    include_once './utils/utils.php';
+    go("./index.php");
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,14 +19,6 @@
 <body>
 
     <?php
-
-    if (isset($_SESSION['username']) && $_SESSION['username']){
-        echo 'Bạn đã đăng nhập với tên là '.$_SESSION['username']."<br/>";
-        echo 'Click vào đây để <a href="logout.php">Logout</a> <br/> ';
-    }
-    else{
-        header("location: index.php");
-    }
     include_once './components/sidebar.php';
     if (isset($_GET["page"])) {
         switch ($_GET["page"]) {

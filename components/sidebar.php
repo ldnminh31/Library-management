@@ -19,8 +19,7 @@ let itemList = document.querySelectorAll('.sidebar-item')
 for (let item of itemList) {
     if (item.id === 'logout') {
         item.addEventListener('click', () => {
-            deleteAllCookies()
-            window.location.replace("./index.php")
+            window.location.replace("./logout.php")
         })
     }
     if (item.id==='book'){
