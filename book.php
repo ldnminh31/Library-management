@@ -6,9 +6,10 @@ $data = get("SELECT * FROM sach");
     <tr>
         <th>Tên sách</th>
         <th>Tác giả</th>
+        <th>Thể loại</th>
         <th>Mô tả</th>
-        <th>Số lượng tổng</th>
-        <th>Số lượng hiện có</th>
+        <th>Vị trí</th>
+        <th>Số lượng sách</th>
     </tr>
     <?php
     foreach ($data as $book) {
@@ -17,9 +18,10 @@ $data = get("SELECT * FROM sach");
         <tr>
         <td>".$book->tensach."</td>
         <td>".$book->tentacgia."</td>
+        <td>".$book->theloai."</td>
         <td>".$book->mota."</td>
+        <td>".$book->vitri."</td>
         <td>".$book->soluong."</td>
-        <td>".$book->soluonghienco."</td>
         </tr>
         ";
     }
