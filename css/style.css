@@ -13,6 +13,13 @@
 .tim-kiem form button{
     border: none;
 }
+.tim-kiem form button a{
+    border: none;
+}
+.tim-kiem form button a:hover{
+    text-decoration: none;
+    color: white;
+}
 .tim-kiem form button:hover{
     border: none;
     background-color: lightskyblue;
