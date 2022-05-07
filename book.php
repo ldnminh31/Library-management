@@ -36,7 +36,7 @@ if (isset($_REQUEST['ok'])) {
 
 
         // Kết nối sql
-        $con =  mysqli_connect("localhost", "root", "", "qltv");
+        $con =  mysqli_connect("remotemysql.com", "CxLjBfh9Ly", "Ua2IOkrJpz", "CxLjBfh9Ly");
 
 
         $sql = mysqli_query($con, "select * from sach where tensach like '%$search%'");
