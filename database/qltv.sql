@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th5 05, 2022 lúc 04:07 PM
+-- Thời gian đã tạo: Th5 06, 2022 lúc 06:19 PM
 -- Phiên bản máy phục vụ: 10.4.22-MariaDB
 -- Phiên bản PHP: 7.4.28
 
@@ -32,9 +32,9 @@ CREATE TABLE `muonsach` (
   `masach` int(10) DEFAULT NULL,
   `ngaymuon` date NOT NULL,
   `ngaytra` date DEFAULT NULL,
-  `trangthai` varchar(50) COLLATE utf8mb4_vietnamese_ci NOT NULL,
+  `trangthai` varchar(50) NOT NULL,
   `soluong` int(10) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_vietnamese_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Đang đổ dữ liệu cho bảng `muonsach`
@@ -55,13 +55,13 @@ INSERT INTO `muonsach` (`mathanhvien`, `masach`, `ngaymuon`, `ngaytra`, `trangth
 
 CREATE TABLE `sach` (
   `masach` int(10) NOT NULL,
-  `tensach` varchar(100) COLLATE utf8mb4_vietnamese_ci NOT NULL,
-  `tentacgia` varchar(100) COLLATE utf8mb4_vietnamese_ci NOT NULL,
-  `theloai` varchar(100) COLLATE utf8mb4_vietnamese_ci NOT NULL,
-  `mota` varchar(200) COLLATE utf8mb4_vietnamese_ci NOT NULL,
-  `vitri` varchar(50) COLLATE utf8mb4_vietnamese_ci DEFAULT NULL,
+  `tensach` varchar(100) NOT NULL,
+  `tentacgia` varchar(100) NOT NULL,
+  `theloai` varchar(100) NOT NULL,
+  `mota` varchar(200) NOT NULL,
+  `vitri` varchar(50) DEFAULT NULL,
   `soluong` int(10) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_vietnamese_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Đang đổ dữ liệu cho bảng `sach`
@@ -87,12 +87,12 @@ INSERT INTO `sach` (`masach`, `tensach`, `tentacgia`, `theloai`, `mota`, `vitri`
 
 CREATE TABLE `thanhvien` (
   `mathanhvien` int(10) NOT NULL,
-  `hovaten` varchar(50) COLLATE utf8mb4_vietnamese_ci NOT NULL,
+  `hovaten` varchar(50) NOT NULL,
   `ngaysinh` date NOT NULL,
-  `sdt` varchar(20) COLLATE utf8mb4_vietnamese_ci NOT NULL,
-  `email` varchar(100) COLLATE utf8mb4_vietnamese_ci DEFAULT NULL,
+  `sdt` varchar(20) NOT NULL,
+  `email` varchar(100) DEFAULT NULL,
   `ngaydangky` date NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_vietnamese_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Đang đổ dữ liệu cho bảng `thanhvien`

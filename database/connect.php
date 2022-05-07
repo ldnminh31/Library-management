@@ -3,6 +3,7 @@
 $servername = "localhost";
 $username = "root";
 $password = "";
+$dbname = "qltv";
 try {
   $conn = new PDO("mysql:host=$servername;dbname=qltv", $username, $password);
   $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
