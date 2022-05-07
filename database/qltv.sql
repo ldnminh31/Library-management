@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th5 06, 2022 lúc 06:19 PM
+-- Thời gian đã tạo: Th5 07, 2022 lúc 06:27 PM
 -- Phiên bản máy phục vụ: 10.4.22-MariaDB
 -- Phiên bản PHP: 7.4.28
 
@@ -60,24 +60,28 @@ CREATE TABLE `sach` (
   `theloai` varchar(100) NOT NULL,
   `mota` varchar(200) NOT NULL,
   `vitri` varchar(50) DEFAULT NULL,
-  `soluong` int(10) DEFAULT NULL
+  `soluong` int(10) DEFAULT NULL,
+  `sach_status` enum('0','1') CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL COMMENT '0-active,1-inactive	',
+  `sach_image` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Đang đổ dữ liệu cho bảng `sach`
 --
 
-INSERT INTO `sach` (`masach`, `tensach`, `tentacgia`, `theloai`, `mota`, `vitri`, `soluong`) VALUES
-(1, 'Ra Bờ Suối Ngắm Hoa Kén Hồng', 'Nguyễn Nhật Ánh', 'truyện ngắn', 'Ra bờ suối ngắm hoa kèn hồng là tác phẩm trong trẻo, tràn đầy tình yêu thương mát lành', 'Kệ 3 tầng 0', 5),
-(2, 'Khuất phục tử thần', 'Bo Parfet & Richard Buskin', 'phiêu lưu', '\"Khuất Phục Tử Thần\" không chỉ là hành trình chinh phục 7 ngọn núi cao nhất 7 lục địa.Đó là một hành trình thay đổi nhận thức và trưởng thành, đối mặt với những thiếu sót, hoàn thiện từng ngày, và cả ', 'Kệ 3 tầng 1', 10),
-(3, 'Đàm đạo với Khổng Tử', 'Hồ Văn Phi', 'triết lý', '“Đàm đạo với Khổng Tử” gồm những câu chuyện đối đáp giữa tác giả Hồ Văn Phi và Khổng Tử xoay quanh các tư tưởng, triết lí của ông được người đời ngưỡng mộ.', 'Kệ 2 tầng 0', 4),
-(4, 'Khi người ấy nói lời yêu, có rất nhiều điều bạn nên nghĩ', 'Minh Đào', 'tình yêu', 'Khi Người Ấy Nói Lời Yêu, Có Rất Nhiều Điều Bạn Nên Nghĩ (Tái Bản 2021)', 'Kệ 2 tầng 0', 0),
-(5, 'Những đòn tâm lý thuyê phục', 'Robert B. Cialdini', 'tâm lý', '6 vũ khí ảnh hưởng hiệu quả được các chuyên gia thuyết phục hàng đầu sử dụng', 'Kệ 1 tầng 0', 1),
-(6, 'Đàn ông bốc phốt đàn ông', 'Quỳnh Trang', 'Tâm lý và tình yêu', 'Cuốn sách như chiếc chìa khóa mở cửa trái tim “cánh mày râu” thông qua 7 chương được viết cô đọng và súc tích', 'Kệ 3 tầng 1', 2),
-(7, 'How Psychology works?', 'Trần Trương Phúc Hạnh , Phương Hoài Nga', 'Tâm lý xã hội', 'Cuốn sách có cấu trúc khoa học, trình bày dễ hiểu, súc tích, thiết kế và minh họa đẹp mắt này sẽ mang đến cho bạn những hiểu biết về các học thuyết tâm lý và các phương pháp trị liệu, từ các vấn đề cá', 'Kệ 5 tầng 5', 3),
-(8, 'The Best of Chicken Soup for the Soul', 'Jack Canfield, Mark Victor Hansen', 'cuộc sống', 'Bộ sách Chicken Soup for the Soul đã mang đến cho bạn đọc nhiều câu chuyện cảm động, những câu chuyện có thể tưới mát tâm hồn và giúp cuộc sống trở nên ý nghĩa hơn. ', 'Kệ 3 tầng 2', 2),
-(9, 'Cuốn tiểu thuyết kinh dị được chờ đợi của tác giả Thomas Harris : Hannibal (TB)', 'Thomas Harris', 'kinh dị', 'Được xem là một trong những sự kiện văn chương được chờ đợi nhất, Hannibal mang người đọc vào cung điện ký ức của một kẻ ăn thịt người, tạo dựng nên một bức chân dung ớn lạnh của tội ác đang âm thầm s', 'Kệ 3 tầng 9', 1),
-(10, 'Chó sủa nhầm cây', 'Eric Barker', 'hành trình khám phá', 'CHÓ SỦA NHẦM C Y - BARKING UP THE WRONG TREE - là quyển sách gây tiếng vang, liên tục nằm trong danh sách bestseller Amazon của tác giả kiêm chủ trang blog Barking up the wrong tree - Eric Barker. Xuy', 'Kệ 3 tầng 2', 1);
+INSERT INTO `sach` (`masach`, `tensach`, `tentacgia`, `theloai`, `mota`, `vitri`, `soluong`, `sach_status`, `sach_image`) VALUES
+(1, 'Ra Bờ Suối Ngắm Hoa Kén Hồng', 'Nguyễn Nhật Ánh', 'Truyện Ngắn', 'Ra bờ suối ngắm hoa kèn hồng là tác phẩm trong trẻo, tràn đầy tình yêu thương mát lành', 'Kệ 3 tầng 0', 5, '1', 'img1.jpg'),
+(2, 'Khuất phục tử thần', 'Bo Parfet & Richard Buskin', 'Phiêu Lưu', '\"Khuất Phục Tử Thần\" không chỉ là hành trình chinh phục 7 ngọn núi cao nhất 7 lục địa.Đó là một hành trình thay đổi nhận thức và trưởng thành, đối mặt với những thiếu sót, hoàn thiện từng ngày, và cả ', 'Kệ 3 tầng 1', 10, '1', 'img2.png'),
+(3, 'Đàm đạo với Khổng Tử', 'Hồ Văn Phi', 'Truyện Ngắn', '“Đàm đạo với Khổng Tử” gồm những câu chuyện đối đáp giữa tác giả Hồ Văn Phi và Khổng Tử xoay quanh các tư tưởng, triết lí của ông được người đời ngưỡng mộ.', 'Kệ 2 tầng 0', 4, '1', 'img3.jpg'),
+(4, 'Khi người ấy nói lời yêu, có rất nhiều điều bạn nên nghĩ', 'Minh Đào', 'Tâm lý và Tình yêu', 'Khi Người Ấy Nói Lời Yêu, Có Rất Nhiều Điều Bạn Nên Nghĩ (Tái Bản 2021)', 'Kệ 2 tầng 0', 0, '1', 'img4.jpg'),
+(5, 'Những đòn tâm lý thuyết phục', 'Robert B. Cialdini', 'Tâm lý xã hội', '6 vũ khí ảnh hưởng hiệu quả được các chuyên gia thuyết phục hàng đầu sử dụng', 'Kệ 1 tầng 0', 1, '1', 'img5.webp'),
+(6, 'Đàn ông bốc phốt đàn ông', 'Quỳnh Trang', 'Tâm lý và Tình yêu', 'Cuốn sách như chiếc chìa khóa mở cửa trái tim “cánh mày râu” thông qua 7 chương được viết cô đọng và súc tích', 'Kệ 3 tầng 1', 2, '1', 'img6.jpg'),
+(7, 'How Psychology works?', 'Trần Trương Phúc Hạnh , Phương Hoài Nga', 'Tâm lý xã hội', 'Cuốn sách có cấu trúc khoa học, trình bày dễ hiểu, súc tích, thiết kế và minh họa đẹp mắt này sẽ mang đến cho bạn những hiểu biết về các học thuyết tâm lý và các phương pháp trị liệu, từ các vấn đề cá', 'Kệ 5 tầng 5', 3, '1', 'img7.jpg'),
+(8, 'The Best of Chicken Soup for the Soul', 'Jack Canfield, Mark Victor Hansen', 'Tâm lý xã hội', 'Bộ sách Chicken Soup for the Soul đã mang đến cho bạn đọc nhiều câu chuyện cảm động, những câu chuyện có thể tưới mát tâm hồn và giúp cuộc sống trở nên ý nghĩa hơn. ', 'Kệ 3 tầng 2', 2, '1', 'img8.jpg'),
+(9, 'Cuốn tiểu thuyết kinh dị được chờ đợi của tác giả Thomas Harris : Hannibal (TB)', 'Thomas Harris', 'Kinh Dị', 'Được xem là một trong những sự kiện văn chương được chờ đợi nhất, Hannibal mang người đọc vào cung điện ký ức của một kẻ ăn thịt người, tạo dựng nên một bức chân dung ớn lạnh của tội ác đang âm thầm s', 'Kệ 3 tầng 9', 1, '1', 'img9.jpg'),
+(10, 'Chó sủa nhầm cây', 'Eric Barker', 'Phiêu Lưu', 'CHÓ SỦA NHẦM C Y - BARKING UP THE WRONG TREE - là quyển sách gây tiếng vang, liên tục nằm trong danh sách bestseller Amazon của tác giả kiêm chủ trang blog Barking up the wrong tree - Eric Barker. Xuy', 'Kệ 3 tầng 2', 1, '1', 'img10.jpg'),
+(11, 'Mọi người đều nói dối', 'Eric Barker', 'Tâm lý xã hội', 'EVERYBODY LIES là quyển sách ngay từ khi ra mắt đã tạo nên cú chấn động trong cộng đồng yêu thích những sự thật tréo nghoeo nói chung và ham mê tìm tòi phân tích dữ liệu nói riêng.', 'Kệ 3 tầng 1', 1, '1', 'img11.jpg'),
+(12, 'Influence, New and Expanded : The Psychology of Persuasion', 'Robert B. Cialdini', 'Tâm lý xã hội', 'Influence, the classic book on persuasion, explains the psychology of why people say \"yes\"—and how to apply these understandings. Dr. Robert Cialdini is the seminal expert in the rapidly expanding fie', 'Kệ 1 tầng 2', 3, '1', 'img12.jpg');
 
 -- --------------------------------------------------------
 
@@ -129,7 +133,7 @@ ALTER TABLE `thanhvien`
 -- AUTO_INCREMENT cho bảng `sach`
 --
 ALTER TABLE `sach`
-  MODIFY `masach` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `masach` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT cho bảng `thanhvien`
