@@ -32,3 +32,10 @@
 .num-result{
     color: rgb(201, 95, 95);
 }
+.btn-del{
+    text-decoration: none;
+
+}
+.btn-del:hover{
+    color: red;
+}
