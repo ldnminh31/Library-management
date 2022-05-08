@@ -1,6 +1,6 @@
 <?php
 include('./components/sidebar.php');
-include('./database/connect.php');
+include('./database/db-con.php');
 ?>
 
 <!DOCTYPE html>
@@ -39,8 +39,8 @@ include('./database/connect.php');
                     <div style="height: 180px; overflow-y: auto; overflow-x: hidden;">
                         <?php
 
-                        $query = "SELECT DISTINCT(theloai) FROM sach WHERE sach_status = '1' ORDER BY masach DESC";
-                        $statement = $conn->prepare();
+                        $query = "SELECT DISTINCT(theloai) FROM sach ";
+                        $statement = $connect->prepare($query);
                         $statement->execute();
                         $result = $statement->fetchAll();
                         foreach ($result as $row) {
@@ -60,8 +60,8 @@ include('./database/connect.php');
                     <div style="height: 180px; overflow-y: auto; overflow-x: hidden;">
                         <?php
 
-                        $query = "SELECT DISTINCT(tentacgia) FROM sach WHERE sach_status = '1' ORDER BY masach DESC";
-                        $statement = $conn->prepare();
+                        $query = "SELECT DISTINCT(tentacgia) FROM sach";
+                        $statement = $connect->prepare($query);
                         $statement->execute();
                         $result = $statement->fetchAll();
                         foreach ($result as $row) {
