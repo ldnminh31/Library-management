@@ -38,7 +38,7 @@ if(isset($_POST["action"]))
 			<div class="col-sm-4 col-lg-3 col-md-3">
 				<div style="border:1px solid #ccc; border-radius:5px; padding:16px; margin-bottom:16px; height:450px;">
 					<img src="images/'. $row['sach_image'] .'" alt="" class="img-responsive" >
-					<p align="center"><strong><a href="#">'. $row['tensach'] .'</a></strong></p>
+					<p align="center"><strong><a href="">'. $row['tensach'] .'</a></strong></p>
 					<h4 style="text-align:center;" class="text-danger" >'. $row['tentacgia'] .'</h4>
 					<p>Thể loại : '. $row['theloai'].'<br />
 					Vị trí sách : '. $row['vitri'] .' <br />
@@ -56,6 +56,5 @@ if(isset($_POST["action"]))
 	}
 	echo $output;
 }
-
 
 
