@@ -1,7 +1,8 @@
+
 <?php
 include_once '../connect.php';
 include_once '../../utils/utils.php';
-var_dump($_POST);
+include '../loading.php';
 try {
     $sql = "UPDATE muonsach SET mathanhvien=?, masach=?, ngaymuon=?, ngaytra=?, soluong=?, trangthai=? 
     WHERE mathanhvien=? AND ngaymuon=?";

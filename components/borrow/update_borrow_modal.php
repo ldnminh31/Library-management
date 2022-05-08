@@ -6,7 +6,7 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <form id="update-form" method="post" target="_blank"
+                <form id="update-form" method="post"
                 action="./database/borrow/update_borrow.php">
                     <div class="mb-3">
                         <label for="exampleInputEmail1" class="form-label">Mã thành viên</label>

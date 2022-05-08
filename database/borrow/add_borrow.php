@@ -1,6 +1,7 @@
 <?php
 include_once '../connect.php';
 include_once '../../utils/utils.php';
+include '../loading.php';
 try {
     $sql = "INSERT INTO `muonsach` (`mathanhvien`, `masach`, `ngaymuon`, `ngaytra`, `soluong`, `trangthai`) VALUES
     (?,?,?,?,?,?)";

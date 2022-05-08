@@ -45,6 +45,10 @@ $data = get("SELECT * FROM muonsach");
         ?>
 
     </table>
+    <!-- delete form -->
+    <form id="deleteForm" action="./database/borrow/delete_borrow.php">
+
+    </form>
     <!-- modal add -->
     <?php
         include './components/borrow/add_borrow_modal.php';
@@ -52,10 +56,10 @@ $data = get("SELECT * FROM muonsach");
     ?>
     <script>
         // add default value to from
-        let btnList = $('.update')
+        let updateBtnList = $('.update')
         let input = $('#update-form')[0]
-        for (let i = 0;i<btnList.length;i++){ //for all btnList
-            let btn = btnList[i];
+        for (let i = 0;i<updateBtnList.length;i++){ //for all updateBtnList
+            let btn = updateBtnList[i];
             let row = btn.getAttribute('row')
             let columnList = $(`td[row="${row}"]`)
             btn.onclick = () => {                 
@@ -64,7 +68,17 @@ $data = get("SELECT * FROM muonsach");
                 }
             }
         }
-        
+        // handle delete
+        let deleteForm = $('#deleteForm')[0]
+        let deleteBtnList = $('.btn-danger')
+        for (let i = 0;i<deleteBtnList.length;i++){
+            let btn = deleteBtnList[i];
+            let row = btn.getAttribute('row')
+            let columnList = $(`td[row="${row}"]`)
+            btn.onclick = () => { 
+                window.location = `./database/borrow/delete_borrow.php?mathanhvien=${columnList[0].innerText}&ngaymuon=${columnList[2].innerText}`;
+            }
+        }
 
     </script>
 </div>
