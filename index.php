@@ -13,6 +13,7 @@ if (isset($_SESSION['username']))
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="./css/style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 </head>
 
@@ -28,20 +29,22 @@ if (isset($_SESSION['username']))
 
                         <form method="post" action="./login.php" style="width: 23rem;">
 
-                            <h3 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Thư viện ABC</h3>
+                            <h3 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">THƯ VIỆN ABC</h3>
 
                             <div class="form-outline mb-4">
-                                <input name="username" id="form2Example18" class="form-control form-control-lg" />
                                 <label class="form-label" for="form2Example18">Tài khoản</label>
+                                <input name="username" id="form2Example18" class="form-control form-control-lg" />
+
                             </div>
 
                             <div class="form-outline mb-4">
-                                <input name="password" type="password" id="form2Example28" class="form-control form-control-lg" />
                                 <label class="form-label" for="form2Example28">Mật khẩu</label>
+                                <input name="password" type="password" id="form2Example28" class="form-control form-control-lg" />
+
                             </div>
 
                             <div class="pt-1 mb-4">
-                                <button type="submit" class="btn btn-info btn-lg btn-block" name="dangnnhap" type="button">Đăng nhập</button>
+                                <button type="submit" class="btn btn-primary btn-lg btn-block" name="dangnnhap" type="button">Đăng nhập</button>
                             </div>
 
                             <p class="small mb-5 pb-lg-2"><a class="text-muted" href="#!">Quên mật khẩu?</a></p>
