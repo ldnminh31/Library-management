@@ -1,4 +1,5 @@
 <?php
+include_once './utils/utils.php';
 session_start();
 if (!isset($_SESSION['username'])) {
     go("./index.php");
@@ -39,6 +40,7 @@ include('./database/db-con.php');
             <div class="col-md-3">
                 <!-- the loai -->
                 <div class="list-group">
+                    <a class="btn btn-primary" href="./admin.php?page=book">Trở về</a>
                     <h3>Thể loại</h3>
                     <div style="height: 180px; overflow-y: auto; overflow-x: hidden;">
                         <?php
