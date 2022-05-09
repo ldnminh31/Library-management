@@ -1,5 +1,9 @@
 <?php
-include('./components/sidebar.php');
+session_start();
+if (!isset($_SESSION['username'])) {
+    go("./index.php");
+}
+// include('./components/sidebar.php');
 include('./database/db-con.php');
 ?>
 

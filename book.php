@@ -1,5 +1,7 @@
 <div>
     <?php
+    if (!isset($_GET["page"]))
+        header('Location: /qltv/admin.php');
     include_once './database/get.php';
     $data = get("SELECT * FROM sach");
     ?>
@@ -80,14 +82,12 @@
         }
     }
     ?>
-
-
     <!-- Load db -->
     <p class="fs-4 text-center"><b>Tất cả sách trong thư viện</b></p>
     <button class="btn btn-primary mx-auto d-block" data-bs-toggle="modal" data-bs-target="#exampleModal">Thêm sách</button>
     <table class="table ">
         <tr>
-            <th class="text-center">STT</th>
+            <th class="text-center">Mã sách</th>
             <th class="text-center">Tên sách</th>
             <th class="text-center">Tác giả</th>
             <th class="text-center">Thể loại</th>
@@ -98,17 +98,17 @@
         <?php
         foreach ($data as $book) {
             # code...
-            echo "
+            echo '
             <tr>
-            <td>" . $book->masach . "</td>
-            <td>" . $book->tensach . "</td>
-            <td>" . $book->tentacgia . "</td>
-            <td>" . $book->theloai . "</td>
-            <td>" . $book->mota . "</td>
-            <td>" . $book->vitri . "</td>
-            <td>" . $book->soluong . "</td>
+            <td align="center">' . $book->masach . '</td>
+            <td>' . $book->tensach . '</td>
+            <td>' . $book->tentacgia . '</td>
+            <td>' . $book->theloai . '</td>
+            <td>' . $book->mota . '</td>
+            <td>' . $book->vitri . '</td>
+            <td>' . $book->soluong . '</td>
             </tr>
-            ";
+            ';
         }
         ?>
     </table>

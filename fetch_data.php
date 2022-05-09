@@ -2,7 +2,7 @@
 
 //fetch_data.php
 include('./database/db-con.php');
-
+include_once './database/get.php';
 if(isset($_POST["action"]))
 {
 	$query = "
@@ -24,7 +24,7 @@ if(isset($_POST["action"]))
 		";
 	}
 
-
+	$data = get($query);
 	$statement = $connect->prepare($query);
 	$statement->execute();
 	$result = $statement->fetchAll();

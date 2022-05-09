@@ -1,4 +1,6 @@
 <?php
+if (!isset($_GET["page"]))
+    header('Location: /qltv/admin.php');    
 include_once './database/get.php';
 $data = get("SELECT * FROM muonsach");
 // sort handling
