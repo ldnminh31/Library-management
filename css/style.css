@@ -1,34 +1,11 @@
-.tim-kiem{
-    padding: 20px;
-}
-.tim-kiem input{
-    width: 50%;
-}
-.tim-kiem form{
-    margin: auto;
-    box-sizing: border-box;
-    padding: 20px 20px 20px 300px;
-    width: 100%;
-}
-.tim-kiem form button{
-    border: none;
-}
-.tim-kiem form button a{
-    border: none;
-}
-.tim-kiem form button a:hover{
-    text-decoration: none;
-    color: white;
-}
-.tim-kiem form button:hover{
-    border: none;
-    background-color: lightskyblue;
-    color: white;
-    padding: 5px;
-}
+
 .result row col{
     background-color: aqua;
 }
 .num-result{
     color: rgb(201, 95, 95);
+}
+.form-timkiem{
+    box-sizing: border-box;
+    padding: 10px;
 }
