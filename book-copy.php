@@ -2,15 +2,16 @@
 if (!isset($_GET["page"]))
     header('Location: /qltv/admin.php');
 ?>
+<link rel="stylesheet" href="./css/style.css">
 <div>
     <!-- Toolbar -->
-    <p class="fs-4 text-center"><b>Quản lý sách</b></p>
+    <p class="fs-4 text-center title"><b>Quản lý sách</b></p>
     <div style="display: flex; justify-content: center">
         <button style="height: 35px" class="btn btn-primary mx-1" data-bs-toggle="modal" data-bs-target="#exampleModal">Thêm sách</button>
         <form style="height: 35px; display: flex; justify-content: center" action="" method="post">
-            <input style="height: 35px" type="text" name="search" value="">
+            <input style="height: 35px" class="input-group-text" type="text" name="search" value="">
             <button style="height: 35px" class="btn btn-secondary mx-1" type="submit" name="ok" value="search">Tìm kiếm</button>
-            <button style="height: 35px"><a href="./filter.php">Lọc sách nâng cao</a></button>
+            <a class="btn btn-default" href="./filter.php">Lọc sách nâng cao</a>
         </form>
     </div>
     <hr>

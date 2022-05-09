@@ -1,4 +1,12 @@
 
+@import url('https://fonts.googleapis.com/css2?family=Questrial&family=Roboto:wght@100&display=swap');
+
+*{
+    font-family: 'Roboto', sans-serif!important;
+}
+.title{
+    padding: 20px;
+}
 .result row col{
     background-color: aqua;
 }
