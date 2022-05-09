@@ -37,6 +37,11 @@ if (!isset($_GET["page"]))
     <!-- book list -->
     <div style="padding: 0 20px">
         <?php
+        //Pagination
+        $currentPage = isset($_GET["pagination"]) ? $_GET["pagination"] : 1;
+        $totalPage = ceil((float)count($data) / 5);
+        $data = array_slice($data, 5 * ($currentPage - 1), 5);
+        //
         foreach ($data as $book) {
             echo '
                 <div class="card" style="width: 100%; flex-direction: row; margin: auto">
@@ -77,9 +82,20 @@ if (!isset($_GET["page"]))
               </div>
                 ';
         }
+
         ?>
     </div>
-
+    <!-- Pagination pane -->
+    <nav aria-label="Page navigation example" class="mx-auto d-flex justify-content-center mt-3">
+        <ul class="pagination">
+            <?php
+            //Pagination pane
+            for ($i = 1; $i <= $totalPage; $i++) {
+                echo '<li class="page-item '.($i==$currentPage?'active':'').'"><a class="page-link" href="./admin.php?page=book&pagination='.$i.'">'.$i.'</a></li>';
+            }
+            ?>
+        </ul>
+    </nav>
     <!-- modal them sach -->
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">

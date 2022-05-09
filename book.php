@@ -1,12 +1,13 @@
 <div>
     <?php
+    //
     if (!isset($_GET["page"]))
         header('Location: /qltv/admin.php');
     include_once './database/get.php';
     $data = get("SELECT * FROM sach");
     ?>
     <hr>
-    
+
     <link rel="stylesheet" href="./css/style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
@@ -39,13 +40,12 @@
         $search = addslashes($_POST['search']);
 
         // Nếu người dùng chưa nhập liệu mà đã nhấn submit.
- 
+
         if (empty($search)) {
             echo "<p class='fs-5 text-center'>Nhập từ khóa!</p>";
-        }elseif ($search == ' '){
+        } elseif ($search == ' ') {
             echo "<p class='fs-5 text-center'>Nhập từ khóa!</p>";
-        } 
-        else {
+        } else {
 
             // Kết nối sql
             $con =  mysqli_connect("localhost", "root", "", "qltv");
@@ -105,6 +105,7 @@
             <th class="text-center">Số lượng sách</th>
         </tr>
         <?php
+        //
         foreach ($data as $book) {
             # code...
             echo '
