@@ -1,6 +1,8 @@
 <?php
 if (!isset($_GET["page"]))
     header('Location: /qltv/admin.php');
+if (isset($_COOKIE["pagination"]) && !isset($_GET["pagination"]))
+    header("Location: /qltv/admin.php?page=book&pagination=".$_COOKIE['pagination']);
 ?>
 <div>
     <!-- Toolbar -->
@@ -41,6 +43,7 @@ if (!isset($_GET["page"]))
         $currentPage = isset($_GET["pagination"]) ? $_GET["pagination"] : 1;
         $totalPage = ceil((float)count($data) / 5);
         $data = array_slice($data, 5 * ($currentPage - 1), 5);
+        setcookie("pagination", $currentPage, time() + (86400 * 30), "/");
         //
         foreach ($data as $book) {
             echo '
