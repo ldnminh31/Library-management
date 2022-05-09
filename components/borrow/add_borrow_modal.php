@@ -17,11 +17,11 @@
                     </div>
                     <div class="mb-3">
                         <label for="exampleInputEmail1" class="form-label">Ngày mượn</label>
-                        <input type="date" name="ngaymuon" required class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                        <input type="datetime-local" name="ngaymuon" required class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
                     </div>
                     <div class="mb-3">
                         <label for="exampleInputEmail1" class="form-label">Ngày trả</label>
-                        <input type="date" name="ngaytra" required class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                        <input type="datetime-local" name="ngaytra" required class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
                     </div>
                     <div class="mb-3">
                         <label for="exampleInputEmail1" class="form-label">Số lượng</label>

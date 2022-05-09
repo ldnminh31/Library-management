@@ -1,7 +1,8 @@
-<?php 
-session_start(); 
-if (!isset($_SESSION['username'])){
-    include_once './utils/utils.php';
+<?php
+include_once './utils/utils.php';
+session_start();
+if (!isset($_SESSION['username'])) {
+
     go("./index.php");
 }
 ?>
@@ -16,6 +17,30 @@ if (!isset($_SESSION['username'])){
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <script src="js/jquery-1.10.2.min.js"></script>
     <script src="js/jquery-ui.js"></script>
+    <script src="https://kit.fontawesome.com/a3eb1f9cb2.js" crossorigin="anonymous"></script>
+    <style>
+        td,
+        th {
+            vertical-align: middle;
+        }
+
+        th {
+            text-align: center;
+        }
+    </style>
+    <link rel="stylesheet" href="/QLTV/components/sidebar.css" />
+    <script>
+        function toInputDatetime(datetime) {
+            let date = datetime.split(' ')[1]
+            let time = datetime.split(' ')[0]
+            let hour = time.split(':')[0]
+            let minute = time.split(':')[1]
+            let year = date.split('/')[2]
+            let month = date.split('/')[1]
+            let day = date.split('/')[0]
+            return `${year}-${month}-${day}T${hour}:${minute}`;
+        }
+    </script>
 </head>
 
 <body>

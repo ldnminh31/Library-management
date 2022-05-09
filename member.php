@@ -32,7 +32,7 @@ $data = get("SELECT * FROM thanhvien");
                 <td row="'.$i.'">' . $thanhvien->sdt . '</td>
                 <td row="'.$i.'">' . $thanhvien->email . '</td>
                 <td row="'.$i.'" align="center">' . $thanhvien->ngaydangky . '</td>
-                <td>
+                <td width="150">
                     <button row="'.$i.'"  class="btn btn-primary update" 
                     data-bs-toggle="modal"
                     data-bs-target="#updateModal">Sửa</button>
