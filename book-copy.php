@@ -18,7 +18,7 @@ if (!isset($_GET["page"]))
     // tim kiem
     include_once './database/get.php';
     // Gán hàm addslashes để chống sql injection
-    if (empty($_POST['search'])) {
+    if (!isset($_POST['search']) || empty(trim($_POST["search"]))) {
         $data = get("SELECT * FROM sach");
     } else {
         $search = addslashes($_POST['search']);
