@@ -36,15 +36,20 @@ $data = get("SELECT * FROM thanhvien");
                     <button row="'.$i.'"  class="btn btn-primary update" 
                     data-bs-toggle="modal"
                     data-bs-target="#updateModal">Sửa</button>
-                    <button row="'.$i.'" class="btn btn-danger">Xóa</button>
+                    <button row="' . $i . '" class="btn btn-danger">Xóa</button>
                 </td>
             </tr>
             ';
         }
 
+
         ?>
 
     </table>
+    <!-- delete form -->
+    <form id="deleteForm" action="./database/member/delete_member.php">
+
+    </form>
     <!-- modal add -->
     <?php
         include './components/member/add_member_modal.php';
@@ -64,7 +69,23 @@ $data = get("SELECT * FROM thanhvien");
                 }
             }
         }
+        // handle delete
+        let deleteForm = $('#deleteForm')[0]
+        let deleteBtnList = $('.btn-danger')
+        for (let i = 0; i < deleteBtnList.length; i++) {
+            let btn = deleteBtnList[i];
+            let row = btn.getAttribute('row')
+            let columnList = $(`td[row="${row}"]`)
+            btn.onclick = () => {
+                if(confirm("Bạn có muốn xóa thành viên này?") == true){
+                    window.location = `./database/member/delete_member.php?mathanhvien=${columnList[0].innerText}`;
+                }else{
+                    go("/qltv/admin.php?page=member");
+                }
+            }
+        }
         
 
     </script>
+
 </div>
