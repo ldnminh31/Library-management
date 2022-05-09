@@ -16,4 +16,12 @@ function formatDateTime($datetime)
     $year = explode('-',$date)[0];
     return $time.' '.$day.'/'.$month.'/'.$year;
 }
+function toDatabaseDateTime($datetime){
+    $time = explode(' ',$datetime)[0];
+    $date = explode(' ',$datetime)[1];
+    $day = explode('/',$date)[0];
+    $month = explode('/',$date)[1];
+    $year = explode('/',$date)[2];
+    return $year.'-'.$month.'-'.$day.' '.$time;
+}
 ?>
