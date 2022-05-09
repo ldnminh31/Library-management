@@ -8,7 +8,7 @@ try {
     $stmt= $conn->prepare($sql);
     $stmt->execute([$_GET["mathanhvien"]]);
 } catch (\Throwable $th) {
-    alert("Lỗi hệ thống");
+    alert("Hãy đảm bảo thành viên hoàn thành quá trình trả sách");
 }
 
 go("/qltv/admin.php?page=member");
