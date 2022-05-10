@@ -1,7 +1,7 @@
 <?php
 include_once '../connect.php';
 include_once '../../utils/utils.php';
-var_dump($_POST);
+include_once '../loading.php';
 try {
     $sql = "UPDATE thanhvien SET mathanhvien=?, hovaten=?, ngaysinh=?, sdt=?, email=?, ngaydangky=? 
     WHERE mathanhvien=?";
@@ -14,5 +14,5 @@ try {
     alert("Lỗi hệ thống");
 }
 
-// go("/qltv/admin.php?page=member");
+go("/qltv/admin.php?page=member");
 
